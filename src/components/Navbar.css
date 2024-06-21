@@ -1,0 +1,57 @@
+/* Navbar.css */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1, nav .text-3xl {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #ffbf00;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #4a5568;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    color: #3182ce;
+    transition: color 0.3s ease;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.fixed-menu {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+  
