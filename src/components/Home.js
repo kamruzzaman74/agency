@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Services from '../components/Service';
 import GrowBusiness from './GrowBusiness';
@@ -5,13 +6,15 @@ import IncreaseBusiness from './IncreaseBusiness';
 import BoostSEO from './BoostSEO';
 import heroImage from '../photo/nn.jpeg'; // Replace with your actual hero image path
 import ImpactDhaka from './ImpactDhaka';
+import 'animate.css'; // Make sure you have Animate.css installed
+
 const Home = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row">
         {/* Left Column (Text) */}
-        <div className="md:w-1/2 bg-white py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="md:w-2/3 bg-white py-24 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
           <div className="max-w-lg text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 sm:py-24 leading-tight mb-4 animate__animated animate__fadeIn">
               <span className="text-green-500">Transform</span> Your Business with <br className="block sm:hidden" />Bangladeshi Innovation
@@ -28,7 +31,7 @@ const Home = () => {
         </div>
 
         {/* Right Column (Image) */}
-        <div className="md:w-1/2 bg-cover mt-11 bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroImage})`, minHeight: 'calc(100vh - 4rem)' }}></div>
+        <div className="md:w-1/3 md:min-h-[30vh] min-h-[50vh] md:mt-20 bg-cover bg-center bg-no-repeat animate__animated animate__fadeInRight" style={{ backgroundImage: `url(${heroImage})` }}></div>
       </div>
 
       {/* Services Section */}
@@ -50,8 +53,6 @@ const Home = () => {
 };
 
 export default Home;
-
-
 
 
 
