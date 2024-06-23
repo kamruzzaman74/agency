@@ -1,59 +1,104 @@
-/* Example custom styles for Navbar */
+/* Navbar.css */
 
-/* Container styles */
+/* General Styles */
+.navbar {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+}
+
 .container {
-    max-width: 1200px; /* Adjust as needed */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  /* Logo and Navigation links */
-  .text-cyan-600 {
-    color: #2b6cb0; /* Example color */
-  }
-  
-  .text-rose-600 {
-    color: #d53f8c; /* Example color */
-  }
-  
-  /* Button styles */
-  .text-blue-600 {
-    color: #3b82f6; /* Example color */
-  }
-  
-  /* Menu styles */
-  .md:flex {
     display: flex;
-  }
-  
-  .md:hidden {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+.navbar-brand span {
+    margin-left: 0.5rem;
+    color: #f06292;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    color: #1e88e5;
+}
+
+.navbar-menu {
     display: none;
-  }
-  
-  /* NavLink styles */
-  .text-gray-900 {
-    color: #1a202c; /* Example color */
-  }
-  
-  .hover\:text-blue-600:hover {
-    color: #3b82f6; /* Example color */
-  }
-  
-  .transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-    transition-duration: 300ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .duration-300 {
-    transition-duration: 300ms;
-  }
-  
-  .ease-in-out {
-    transition-timing-function: ease-in-out;
-  }
-  
-  /* Additional custom styles as needed */
-  
+}
+
+.navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 20;
+}
+
+.navbar-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-menu ul li {
+    list-style: none;
+}
+
+.navbar-menu ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #424242;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar-menu ul li a:hover,
+.navbar-menu ul li a.active {
+    color: #1e88e5;
+}
+
+.navbar-menu ul li a .icon {
+    margin-right: 0.5rem;
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-menu ul {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}

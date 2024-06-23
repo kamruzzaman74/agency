@@ -1,3 +1,29 @@
+/* Tailwind CSS default styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for the Home component */
+.home {
+  min-height: 100vh;
+}
+
+/* Ensure the image in the hero section doesn't stretch excessively */
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Responsive padding adjustments */
+@media (min-width: 640px) {
+  .home-text {
+    padding-top: 6rem; /* sm:pt-24 */
+  }
+}
+
+@media (min-width: 768px) {
+  .home-text {
+    padding-top: 6rem; /* md:pt-24 */
+  }
+}

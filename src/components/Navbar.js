@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <NavLink exact to="/" className="text-xl font-bold tracking-widest text-cyan-600 flex items-center">
                         NRC Marketing Agency
-                        <span className='text-rose-600'>(BE LOYAL & BE RARE)</span>
+                        <span className='text-rose-600 ml-2'>(BE LOYAL & BE RARE)</span>
                     </NavLink>
                 </div>
                 <div className="md:hidden">
@@ -25,7 +25,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className={`md:hidden ${isOpen ? 'fixed top-0 left-0 right-0 bottom-0 bg-white z-20 flex flex-col items-center justify-center' : 'hidden'}`}>
-                    <ul className="flex flex-col items-center space-y-4">
+                    <ul className="flex flex-col items-center space-y-6">
                         <li>
                             <NavLink exact to="/" activeClassName="text-blue-600" className="text-gray-900 hover:text-blue-600 transition duration-300 text-lg flex items-center" onClick={() => setIsOpen(false)}>
                                 <FaHome className="mr-2" /> Home
@@ -48,8 +48,8 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="md:flex md:items-center md:space-x-6 hidden md:block">
-                    <ul className="md:flex md:items-center md:space-x-6">
+                <div className="hidden md:flex md:items-center md:space-x-6">
+                    <ul className="flex items-center space-x-6">
                         <li>
                             <NavLink exact to="/" activeClassName="text-blue-600" className="text-gray-900 hover:text-blue-600 transition duration-300 text-lg flex items-center">
                                 <FaHome className="mr-2" /> Home
@@ -78,5 +78,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
