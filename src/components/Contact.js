@@ -24,7 +24,7 @@ const Contact = () => {
         <div className="mb-6">
           <FaEnvelope className="inline-block mr-2 text-blue-500" />
           <span className="font-semibold">Email:</span>
-          <span className="ml-2">nrcagency@gmail.com</span>
+          <span className="ml-2">nrcagency24@gmail.com</span>
         </div>
         <div className="mb-6">
           <FaMapMarkerAlt className="inline-block mr-2 text-red-500" />
