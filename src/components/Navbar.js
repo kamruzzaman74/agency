@@ -15,8 +15,10 @@ const Navbar = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-xl font-bold tracking-widest text-cyan-400">
                     <NavLink exact to="/" className="text-cyan-400">
-                        NRC Marketing Agency <span className='text-rose-400'>(BE LOYAL & BE RARE)</span> 
+                        NRC Marketing Agency
+                       
                     </NavLink>
+                    <div> <span className='text-rose-400'>(BE LOYAL & BE RARE)</span> </div>
                 </div>
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none text-blue-600">
