@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,25 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (isMobileMenuOpen) {
+        e.preventDefault();
+      }
+    };
+
+    // Event listener for touch move (to prevent scrolling)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('touchmove', handleTouchMove);
+      }
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <nav className="bg-white shadow-md">
@@ -38,10 +57,10 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              to="/service"
+              to="/services"
               className="text-gray-800 hover:text-red-600 transition duration-300 ease-in-out"
             >
-              Service
+              Services
             </Link>
             <Link
               to="/contact"
@@ -88,11 +107,11 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              to="/service"
+              to="/services"
               onClick={closeMobileMenu}
               className="block py-2 px-4 text-gray-800 hover:text-red-600 transition duration-300 ease-in-out rounded-md"
             >
-              Service
+              Services
             </Link>
             <Link
               to="/contact"
@@ -109,4 +128,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
