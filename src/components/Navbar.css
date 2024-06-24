@@ -91,3 +91,17 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   /* Add any other styles you need for the fixed navbar */
 }
+
+/* Navbar.css */
+@media (max-width: 767px) {
+    .navbar.mobile-menu-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Adjust z-index as needed */
+      overflow-y: auto; /* Enables scrolling if content overflows */
+      -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+    }
+  }
+  
