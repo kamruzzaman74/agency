@@ -16,7 +16,7 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <NavLink exact to="/" className="text-xl font-bold tracking-widest text-cyan-600 flex items-center">
                         NRC Marketing Agency
-                        <span className='text-rose-600 ml-2'>(BE LOYAL & BE RARE)</span>
+                        <span className='text-rose-600 ml-2'>(Be loyal, Be Rare)</span>
                     </NavLink>
                 </div>
                 <div className="md:hidden">
