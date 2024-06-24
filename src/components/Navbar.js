@@ -24,8 +24,8 @@ const Navbar = () => {
                         {isOpen ? <FaTimes size={28} /> : <FaBars size={28} />}
                     </button>
                 </div>
-                <div className={`md:hidden ${isOpen ? 'fixed top-0 left-0 right-0 bottom-0 bg-white z-20 flex flex-col items-center justify-center' : 'hidden'}`}>
-                    <ul className="flex flex-col items-center space-y-6">
+                <div className={`md:hidden fixed top-0 left-0 w-full h-full bg-white z-20 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                    <ul className="flex flex-col items-center justify-center h-full space-y-6">
                         <li>
                             <NavLink exact to="/" activeClassName="text-blue-600" className="text-gray-900 hover:text-blue-600 transition duration-300 text-lg flex items-center" onClick={() => setIsOpen(false)}>
                                 <FaHome className="mr-2" /> Home
@@ -78,3 +78,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
