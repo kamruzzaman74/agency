@@ -15,23 +15,18 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleTouchMove = (e) => {
-      if (isMobileMenuOpen) {
-        e.preventDefault();
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
       }
     };
 
-    // Event listener for touch move (to prevent scrolling)
-    if (typeof window !== 'undefined') {
-      window.addEventListener('touchmove', handleTouchMove, { passive: false });
-    }
+    document.addEventListener('keydown', handleEscape);
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('touchmove', handleTouchMove);
-      }
+      document.removeEventListener('keydown', handleEscape);
     };
-  }, [isMobileMenuOpen]);
+  }, []);
 
   return (
     <nav className="bg-white shadow-md">
@@ -57,7 +52,7 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              to="/services"
+              to="/service"
               className="text-gray-800 hover:text-red-600 transition duration-300 ease-in-out"
             >
               Services
@@ -87,11 +82,19 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`${
-            isMobileMenuOpen ? 'flex' : 'hidden'
-          } md:hidden justify-center items-center mt-4 bg-gray-100 py-2 rounded-md`}
+          className={`fixed inset-0 z-50 ${
+            isMobileMenuOpen ? 'block' : 'hidden'
+          } md:hidden bg-gray-100`}
         >
-          <ul className="flex flex-col space-y-4 text-center">
+          <div className="flex justify-end p-4">
+            <button
+              onClick={closeMobileMenu}
+              className="text-gray-800 focus:outline-none"
+            >
+              <FontAwesomeIcon icon={faTimes} size="lg" />
+            </button>
+          </div>
+          <div className="flex flex-col items-center">
             <Link
               to="/"
               onClick={closeMobileMenu}
@@ -107,11 +110,11 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              to="/services"
+              to="/service"
               onClick={closeMobileMenu}
               className="block py-2 px-4 text-gray-800 hover:text-red-600 transition duration-300 ease-in-out rounded-md"
             >
-              Services
+              Service
             </Link>
             <Link
               to="/contact"
@@ -120,7 +123,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
-          </ul>
+          </div>
         </div>
       </div>
     </nav>
